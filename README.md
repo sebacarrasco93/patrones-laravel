@@ -23,7 +23,6 @@ Si usas Windows:
 - [ ] Pipeline
 - [ ] Adapter
 - [ ] Strategy
-- [ ] Strategy
 - [ ] Chain of Responsability
 - [ ] Command
 
