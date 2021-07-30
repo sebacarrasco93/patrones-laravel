@@ -6,5 +6,8 @@ use Illuminate\Http\Request;
 
 class PatronesController extends Controller
 {
-    
+    public function factory()
+    {
+        return view('patrones.factory');
+    }
 }

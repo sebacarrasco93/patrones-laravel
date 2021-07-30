@@ -16,7 +16,7 @@ Si usas Windows:
 - Patrones de Diseño, [Blog de Herminio Heredia](https://herminioheredia.com.mx/)
 
 ## Patrones disponibles:
-- [ ] Factory
+- [x] Factory
 - [ ] Factory Method
 - [ ] Builder
 - [ ] State

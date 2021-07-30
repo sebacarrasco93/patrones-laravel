@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\FactoryController;
+use App\Http\Controllers\PatronesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'index');
+
+Route::get('factory', [PatronesController::class, 'factory'])->name('patrones.factory');
+
+Route::post('factory/{report}', FactoryController::class)->name('factory');
+
