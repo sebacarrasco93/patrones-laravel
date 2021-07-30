@@ -29,5 +29,5 @@ Si usas Windows:
 
 ## Testing
 ```shell
-php artisan test
+php artisan test # --parallel
 ```
