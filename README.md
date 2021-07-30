@@ -6,7 +6,7 @@ Esta es una recopilación de diferentes Patrones de Diseño que se pueden utiliz
 
 Testeado en **Laravel 8** y **PHP 8**, pero puede servir en futuras versiones (y también anteriores).
 
-Recursos utilizados:
+## Recursos utilizados:
 - Patrones de Diseño, [Blog de Herminio Heredia](https://herminioheredia.com.mx/)
 
 ## Patrones disponibles:
@@ -20,3 +20,8 @@ Recursos utilizados:
 - [ ] Strategy
 - [ ] Chain of Responsability
 - [ ] Command
+
+## Testing
+```shell
+php artisan test
+```
