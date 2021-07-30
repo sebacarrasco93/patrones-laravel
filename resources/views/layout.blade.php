@@ -39,13 +39,13 @@
 
         button {
             background: #fff;
-            border: 2px solid #000;
+            border: 1px solid rgba(0,0,0,.8);
             padding: 10px;
             border-radius: 5px;
         }
 
         button:hover {
-            background: #000;
+            background: rgba(0,0,0,.8);
             color: #fff;
         }
 
