@@ -16,7 +16,7 @@ Si usas Windows:
 - Patrones de Diseño, [Blog de Herminio Heredia](https://herminioheredia.com.mx/)
 
 ## Patrones disponibles:
-- [x] Factory
+- [x] [Factory](https://github.com/sebacarrasco93/patrones-laravel/commit/16c29acafb6f4136ff0b52b121e8d215e2092890)
 - [ ] Factory Method
 - [ ] Builder
 - [ ] State
