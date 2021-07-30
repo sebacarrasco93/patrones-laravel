@@ -6,6 +6,12 @@ Esta es una recopilación de diferentes Patrones de Diseño que se pueden utiliz
 
 Testeado en **Laravel 8** y **PHP 8**, pero puede servir en futuras versiones (y también anteriores).
 
+## Importante, antes de usar:
+
+Si usas Windows:
+1. Instala [wkhtmltopdf](https://wkhtmltopdf.org/downloads.html), de preferencia en la ruta ```C:\wkhtmltopdf``` 
+2. Abre el archivo `.env` y busca la llave `WKHTML_PDF_BINARY`. Pon la ruta completa del ejecutable de wkhtmltopdf (si instalaste en ```C:\wkhtmltopdf```, sólo debes descomentar esa línea, de lo contrario, ya sabes qué hacer: Escribirla completa)
+
 ## Recursos utilizados:
 - Patrones de Diseño, [Blog de Herminio Heredia](https://herminioheredia.com.mx/)
 
