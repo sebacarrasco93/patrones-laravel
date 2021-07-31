@@ -30,3 +30,124 @@ Si usas Windows:
 ```shell
 php artisan test # --parallel
 ```
+
+## Contribuir
+Crea un Pull Request con los cambios. Para agregar un patrón nuevo y mantener la misma consistencia de datos, debes seguir lo siguiente:
+Crear controller:
+```shell
+php artisan make:test NombrePatronTest
+```
+
+tests/Feature/NombrePatronTest.php
+```php
+use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
+
+class NombrePatronTest extends TestCase
+{
+    use RefreshDatabase;
+
+    /** @test */
+    function puede_descargar_un_reporte_de_usuarios_usando_dompdf_con_nombre_del_patron()
+    {
+        $users = User::factory(5)->create();
+
+        $response = $this->post(route('nombrePatron', 'dompdf'));
+
+        $response->assertOk();
+
+        $contentType = $response->headers->get('content-type');
+        $contentDisposition = $response->headers->get('content-disposition');
+
+        $this->assertEquals('application/pdf', $contentType);
+        $this->assertEquals('attachment; filename="users_report_nombre_patron.pdf"', $contentDisposition);
+    }
+
+    /** @test */
+    function puede_descargar_un_reporte_de_usuarios_usando_snappy_con_nombre_del_patron()
+    {
+        $users = User::factory(5)->create();
+
+        $response = $this->post(route('nombrePatron', 'snappy'));
+
+        $response->assertOk();
+
+        $contentType = $response->headers->get('content-type');
+        $contentDisposition = $response->headers->get('content-disposition');
+
+        $this->assertEquals('application/pdf', $contentType);
+        $this->assertEquals('attachment; filename="users_report_nombre_patron.pdf"', $contentDisposition);
+    }
+
+    /** @test */
+    function no_puede_descargar_un_reporte_de_usuarios_usando_un_parametro_invalido_con_nombre_del_patron()
+    {
+        $user = User::factory(5)->create();
+
+        $response = $this->post(route('nombrePatron', 'invalido'));
+
+        $response->assertStatus(500);
+    }
+}
+```
+
+Crear controller:
+```shell
+php artisan make:controller NombrePatronController
+```
+
+app/Http/Controllers/NombrePatronController.php
+```php
+public function __invoke(Request $request)
+{
+    // ...
+}
+
+```
+
+resources/views/index.blade.php
+```html
+@section('contenido')
+    <!-- Después del último... -->
+    <a href="{{ route('patrones.nombrePatron') }}">Nombre Patrón</a>
+@endsection
+```
+
+resources/views/patrones/nombre-patron.blade.php
+```html
+@extends('layout')
+@section('titulo', 'Nombre Patrón')
+
+@section('contenido')
+<form action="{{ route('nombrePatron', 'dompdf') }}" method="POST">
+    <h2>Descargar con Dompdf</h2>
+    @csrf
+    <button>Descargar</button>
+</form>
+
+<form action="{{ route('nombrePatron', 'snappy') }}" method="POST">
+    <h2>Descargar con Snappy</h2>
+    @csrf
+    <button>Descargar</button>
+</form>
+@endsection
+```
+
+routes/web.php
+```php
+use App\Http\Controllers\NombrePatronController;
+
+// Abajo del último con métodos GET
+Route::get('nombre-patron', [PatronesController::class, 'nombrePatron'])->name('patrones.nombrePatron');
+
+// Abajo del último con métodos POST
+Route::post('nombre-patron/{report}', NombrePatronController::class)->name('nombrePatron');
+```
+
+README.md
+```markdown
+## Patrones disponibles:
+
+- [x] Nombre Patrón
+```
