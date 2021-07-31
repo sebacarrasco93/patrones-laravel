@@ -10,4 +10,9 @@ class PatronesController extends Controller
     {
         return view('patrones.factory');
     }
+
+    public function factoryMethod()
+    {
+        return view('patrones.factory-method');
+    }
 }

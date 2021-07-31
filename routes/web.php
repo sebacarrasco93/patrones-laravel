@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FactoryController;
+use App\Http\Controllers\FactoryMethodController;
 use App\Http\Controllers\PatronesController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'index');
 
 Route::get('factory', [PatronesController::class, 'factory'])->name('patrones.factory');
+Route::get('factory-method', [PatronesController::class, 'factoryMethod'])->name('patrones.factoryMethod');
 
 Route::post('factory/{report}', FactoryController::class)->name('factory');
+Route::post('factory-method/{report}', FactoryMethodController::class)->name('factoryMethod');
 
