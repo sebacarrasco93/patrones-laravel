@@ -17,7 +17,7 @@ Si usas Windows:
 
 ## Patrones disponibles:
 - [x] [Factory](https://github.com/sebacarrasco93/patrones-laravel/commit/16c29acafb6f4136ff0b52b121e8d215e2092890)
-- [x] Factory Method
+- [x] [Factory Method](https://github.com/sebacarrasco93/patrones-laravel/commit/02b3950fbb9b8177c37ff7e03f36422600bdeb3f)
 - [ ] Builder
 - [ ] State
 - [ ] Pipeline
