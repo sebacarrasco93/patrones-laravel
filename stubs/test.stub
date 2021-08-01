@@ -1,0 +1,30 @@
+<?php
+
+namespace {{ namespace }};
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
+
+class {{ class }} extends TestCase
+{
+    use RefreshDatabase;
+
+    /** @test */
+    function puede_hacer_algo_con_la_primera_opcion_usando_nombre_del_patron()
+    {
+        //
+    }
+
+    /** @test */
+    function puede_hacer_algo_con_la_segunda_opcion_usando_nombre_del_patron()
+    {
+        //
+    }
+
+    /** @test */
+    function lanza_una_excepcion_en_caso_de_recibir_una_opcion_invalida_usando_nombre_del_patron()
+    {
+        //
+    }
+}
