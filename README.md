@@ -32,7 +32,18 @@ php artisan test # --parallel
 ```
 
 ## Contribuir
-Crea un Pull Request con los cambios. Para agregar un patrón nuevo y mantener la misma consistencia de datos, debes seguir lo siguiente:
+Crea un Pull Request con los cambios.
+
+Para agregar un patrón nuevo y mantener la misma consistencia de datos, debes seguir lo siguiente:
+
+---
+Actualización: Usa este comando para crear el Test y Controller automáticamente:
+```shell
+php artisan patrones:nuevo (nuevo-patron)
+```
+---
+
+Si quieres hacer todo a mano, debes escribir:
 
 ```shell
 php artisan make:test NombrePatronTest
