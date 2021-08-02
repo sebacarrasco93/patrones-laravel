@@ -2,10 +2,14 @@
 
 namespace App\Models;
 
+use App\Tasks\Cards\AssignBlackCard;
+use App\Tasks\Cards\AssignGoldenCard;
+use App\Tasks\Cards\AssignPlatinumCard;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Pipeline\Pipeline;
 
 class User extends Authenticatable
 {
@@ -20,6 +24,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'balance',
     ];
 
     /**
@@ -40,4 +45,18 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function elegibleForCreditCard()
+    {
+        return app(Pipeline::class)
+            ->send($this)
+            ->through([
+                AssignGoldenCard::class,
+                AssignPlatinumCard::class,
+                AssignBlackCard::class,
+            ])
+            ->then(function($request) {
+                return $request->credit_card = 'None';
+            });
+    }
 }

@@ -20,7 +20,7 @@ Si usas Windows:
 - [x] [Factory Method](https://github.com/sebacarrasco93/patrones-laravel/commit/02b3950fbb9b8177c37ff7e03f36422600bdeb3f)
 - [ ] Builder
 - [ ] State
-- [ ] Pipeline
+- [x] Pipeline
 - [ ] Adapter
 - [ ] Strategy
 - [ ] Chain of Responsability

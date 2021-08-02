@@ -15,4 +15,11 @@ class PatronesController extends Controller
     {
         return view('patrones.factory-method');
     }
+
+    public function pipeline()
+    {
+        $users = \App\Models\User::get();
+
+        return view('patrones.pipeline', compact('users'));
+    }
 }

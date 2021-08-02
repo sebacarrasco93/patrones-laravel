@@ -3,6 +3,7 @@
 use App\Http\Controllers\FactoryController;
 use App\Http\Controllers\FactoryMethodController;
 use App\Http\Controllers\PatronesController;
+use App\Http\Controllers\PipelineController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +21,9 @@ Route::view('/', 'index');
 
 Route::get('factory', [PatronesController::class, 'factory'])->name('patrones.factory');
 Route::get('factory-method', [PatronesController::class, 'factoryMethod'])->name('patrones.factoryMethod');
+Route::get('pipeline', [PatronesController::class, 'pipeline'])->name('patrones.pipeline');
 
 Route::post('factory/{report}', FactoryController::class)->name('factory');
 Route::post('factory-method/{report}', FactoryMethodController::class)->name('factoryMethod');
+Route::post('pipeline/{user}', PipelineController::class)->name('pipeline');
 
