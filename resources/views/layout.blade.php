@@ -53,6 +53,12 @@
             padding: 10px 0;
         }
 
+        .errores {
+            text-decoration: underline;
+            text-decoration-color: red;
+            text-decoration-style: wavy;
+        }
+
         .contenido {
             margin-top: 20px;
             display: flex;
@@ -65,6 +71,7 @@
 </head>
 <body>
     <h1>@yield('titulo', 'Patrones de Diseño en Laravel')</h1>
+    @include('messages')
     <div class="contenido">
         @yield('contenido')
     </div>
