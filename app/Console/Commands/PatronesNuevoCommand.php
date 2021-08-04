@@ -95,7 +95,7 @@ class PatronesNuevoCommand extends Command
     protected function rememberToCreateView($nombre)
     {
         $name = $this->viewCase;
-        $location = 'resources/views/patrones/' . $name . '.php';
+        $location = 'resources/views/patrones/' . $name . '.blade.php';
 
         $this->comment('Recuerda crear la vista de muestra en ' . $location);
     }
