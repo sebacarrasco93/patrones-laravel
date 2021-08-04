@@ -8,6 +8,18 @@ Testeado en **Laravel 8** y **PHP 8**, pero puede servir en futuras versiones (y
 
 ## Importante, antes de usar:
 
+Si quieres probar manualmente el patrón Adapter (que usa APIs externas para verificar si un email es válido) debes crear una cuenta en ambos proveedores.
+
+- [API Layer (Mailbox Layer)](https://mailboxlayer.com/)
+- [Abstract API](https://www.abstractapi.com/)
+
+A continuación, debes generar tokens y copiarlos en el `.env`:
+
+```dotenv
+API_KEY_APILAYER=#{Tu token acá}
+API_KEY_ABSTRACTAPI=#{Tu token acá}
+```
+
 Si usas Windows:
 1. Instala [wkhtmltopdf](https://wkhtmltopdf.org/downloads.html), de preferencia en la ruta ```C:\wkhtmltopdf``` 
 2. Abre el archivo `.env` y busca la llave `WKHTML_PDF_BINARY`. Pon la ruta completa del ejecutable de wkhtmltopdf (si instalaste en ```C:\wkhtmltopdf```, sólo debes descomentar esa línea, de lo contrario, ya sabes qué hacer: Escribirla completa)
@@ -21,7 +33,7 @@ Si usas Windows:
 - [ ] Builder
 - [ ] State
 - [x] [Pipeline](https://github.com/sebacarrasco93/patrones-laravel/commit/51d2dfcb1f71e9cd76c9413a61ec84f9e6127235)
-- [ ] Adapter
+- [x] Adapter
 - [ ] Strategy
 - [ ] Chain of Responsability
 - [x] [Command](https://github.com/sebacarrasco93/patrones-laravel/commit/22eedf535e40d23145250d62770f679f96b38ae0)

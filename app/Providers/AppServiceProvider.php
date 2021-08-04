@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Contracts\VerifiableAdapter;
+use App\Services\Adapters\AbstractApiAdapter;
+use App\Services\Adapters\MailboxLayerAdapter;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +16,17 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        /* Usamos Mailbox (ApiLayer) */
+        $this->app->bind(
+            VerifiableAdapter::class,
+            config('adapter.driver',MailboxLayerAdapter::class)
+        );
+
+        /* Y si falla o pasa algo, cambiamos acá, y seguimos usando AbstractApi */
+        // $this->app->bind(
+        //     VerifiableAdapter::class,
+        //     config('adapter.driver',AbstractApiAdapter::class)
+        // );
     }
 
     /**

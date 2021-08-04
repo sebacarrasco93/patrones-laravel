@@ -23,6 +23,13 @@ class PatronesController extends Controller
         return view('patrones.pipeline', compact('users'));
     }
 
+    public function adapter()
+    {
+        $users = \App\Models\User::get();
+
+        return view('patrones.adapter', compact('users'));
+    }
+
     public function command()
     {
         $users = \App\Models\User::get();
