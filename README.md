@@ -24,7 +24,7 @@ Si usas Windows:
 - [ ] Adapter
 - [ ] Strategy
 - [ ] Chain of Responsability
-- [ ] Command
+- [x] Command
 
 ## Testing
 ```shell
