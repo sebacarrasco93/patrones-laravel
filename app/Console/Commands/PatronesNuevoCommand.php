@@ -50,7 +50,8 @@ class PatronesNuevoCommand extends Command
         $this->createTest();
         $this->createController();
 
-        $this->rememberToCreateView($nombre);
+        $createView = $this->choice('Quieres agregar la vista en blanco?', ['No', 'Sí'], 'Sí');
+        $this->askToCreateView($createView, $nombre);
 
         $this->rememberToAddRouteToIndex();
         $this->rememberToAddRouteToWebFile();
@@ -92,11 +93,24 @@ class PatronesNuevoCommand extends Command
         $this->info('Se creó el Controller en ' . $location);
     }
 
-    protected function rememberToCreateView($nombre)
+    public function askToCreateView(string $createView, string $nombre)
     {
         $name = $this->viewCase;
         $location = 'resources/views/patrones/' . $name . '.blade.php';
 
+        if ($createView == 'Sí') {
+            touch(base_path($location));
+            $this->info('Se creó la vista en ' . $location);
+
+            return false;
+        }
+
+        $this->rememberToCreateView($location);
+
+        return true;
+    }
+
+    protected function rememberToCreateView($location){
         $this->comment('Recuerda crear la vista de muestra en ' . $location);
     }
 
