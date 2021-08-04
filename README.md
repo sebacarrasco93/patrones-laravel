@@ -24,7 +24,7 @@ Si usas Windows:
 - [ ] Adapter
 - [ ] Strategy
 - [ ] Chain of Responsability
-- [x] Command
+- [x] [Command](https://github.com/sebacarrasco93/patrones-laravel/commit/22eedf535e40d23145250d62770f679f96b38ae0)
 
 ## Testing
 ```shell
