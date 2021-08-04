@@ -10,3 +10,7 @@
         </ul>
     @endforeach
 @endif
+
+@if ($success = session('success'))
+    <div class="exitoso">✅ {{ $success }}</div>
+@endif

@@ -59,6 +59,12 @@
             text-decoration-style: wavy;
         }
 
+        .exitoso {
+            text-decoration: underline;
+            text-decoration-color: green;
+            text-decoration-style: solid;
+        }
+
         .contenido {
             margin-top: 20px;
             display: flex;
