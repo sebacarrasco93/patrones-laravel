@@ -31,7 +31,7 @@ Si usas Windows:
 - [x] [Factory](https://github.com/sebacarrasco93/patrones-laravel/commit/16c29acafb6f4136ff0b52b121e8d215e2092890)
 - [x] [Factory Method](https://github.com/sebacarrasco93/patrones-laravel/commit/02b3950fbb9b8177c37ff7e03f36422600bdeb3f)
 - [ ] Builder
-- [ ] State
+- [x] State
 - [x] [Pipeline](https://github.com/sebacarrasco93/patrones-laravel/commit/51d2dfcb1f71e9cd76c9413a61ec84f9e6127235)
 - [x] [Adapter](https://github.com/sebacarrasco93/patrones-laravel/commit/1a8e6cb0e9c1f9c09b9184c58c849c8a8ca1bb66)
 - [ ] Strategy

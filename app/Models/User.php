@@ -59,4 +59,21 @@ class User extends Authenticatable
                 return $request->credit_card = 'None';
             });
     }
+
+    protected static function booted()
+    {
+        static::created(function ($user) {
+            $user->update(['status' => \App\Models\Status\UnlockStatus::class]);
+        });
+    }
+
+    public function changeStatus() : void
+    {
+        $this->status->handle();
+    }
+
+    public function getStatusAttribute($status)
+    {
+        return new $status($this);
+    }
 }

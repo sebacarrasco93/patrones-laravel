@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Status\LockStatus;
+use App\Models\Status\UnlockStatus;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -41,6 +43,24 @@ class UserFactory extends Factory
         return $this->state(function (array $attributes) {
             return [
                 'email_verified_at' => null,
+            ];
+        });
+    }
+
+    public function locked() : UserFactory
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'status' => LockStatus::class,
+            ];
+        });
+    }
+
+    public function unlocked() : UserFactory
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'status' => UnlockStatus::class,
             ];
         });
     }
